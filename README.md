@@ -1,5 +1,5 @@
 ## Dependencies:
-The Minim libary. If you don't have this, in Processing, go to 
+- The Minim libary. If you don't have this, in Processing, go to 
 ```
 Tools -> Add Tool... -> Libraries
 ```
