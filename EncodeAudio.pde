@@ -12,7 +12,12 @@ void setup()
 {
   size(512, 200);
   
-  String file = selectInput("Select audio file to encode.");
+  //String file = 
+  selectInput("Select audio file to encode.","fileSelected");
+
+}
+
+void fileSelected(File file) {
 
   if (file == null) {
     exit();
@@ -23,9 +28,9 @@ void setup()
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
   
     minim = new Minim(this);
-    sample = minim.loadSample(file);
+    sample = minim.loadSample(file.getAbsolutePath());
     
-    float[] samples = sample.getChannel(BufferedAudio.LEFT);
+    float[] samples = sample.getChannel(AudioSample.LEFT);
     float maxval = 0;
   
     for (int i = 0; i < samples.length; i++) {
